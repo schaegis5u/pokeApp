@@ -11,24 +11,38 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableAll" id="BYZ-38-t0r" customClass="HomeViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-6f-pgA">
-                                <rect key="frame" x="12" y="56" width="390" height="806"/>
+                                <rect key="frame" x="12" y="116" width="390" height="746"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="hkU-fp-nNG"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cJ5-DC-RsE"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5m6-el-NsE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="PokeApp" id="A4a-lT-ekz">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="roa-cx-xWa">
+                                            <connections>
+                                                <segue destination="KcN-X8-85G" kind="show" id="Hia-ro-ICL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.91980725526809692" green="0.14785233548563154" blue="0.18356664443146553" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="UMK-6f-pgA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="8MG-qI-SKp"/>
+                            <constraint firstItem="UMK-6f-pgA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="7AZ-Et-J2E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UMK-6f-pgA" secondAttribute="bottom" id="Fuv-DN-dfF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UMK-6f-pgA" secondAttribute="trailing" constant="12" id="Nmn-Lc-oG6"/>
                             <constraint firstItem="UMK-6f-pgA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="uqX-NP-v0u"/>
@@ -41,6 +55,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-59.420289855072468" y="-47.544642857142854"/>
+        </scene>
+        <!--By Gen View Controller-->
+        <scene sceneID="Xcj-Lf-K8S">
+            <objects>
+                <viewController id="rTD-rk-dYt" customClass="ByGenViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lfp-O2-qhD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vQo-Qh-abH">
+                                <rect key="frame" x="12" y="116" width="390" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rTD-rk-dYt" id="ULU-we-fbR"/>
+                                    <outlet property="delegate" destination="rTD-rk-dYt" id="fkj-i7-phg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aaS-v7-3rT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" secondItem="vQo-Qh-abH" secondAttribute="trailing" constant="12" id="9na-yR-eE2"/>
+                            <constraint firstItem="vQo-Qh-abH" firstAttribute="top" secondItem="aaS-v7-3rT" secondAttribute="top" constant="72" id="Lth-JV-c2K"/>
+                            <constraint firstItem="vQo-Qh-abH" firstAttribute="leading" secondItem="aaS-v7-3rT" secondAttribute="leading" constant="12" id="qC5-gU-eIc"/>
+                            <constraint firstItem="aaS-v7-3rT" firstAttribute="bottom" secondItem="vQo-Qh-abH" secondAttribute="bottom" constant="12" id="vyM-uR-X5e"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvU-4M-3pS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729" y="-48"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="mas-Qa-zy4">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuID" id="KcN-X8-85G" customClass="SideMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B9a-nm-kn8">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5fm-Q5-pgJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AOM-s5-KAf"/>
+                    <size key="freeformSize" width="200" height="896"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54w-Ey-9Nv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="612" y="-698"/>
         </scene>
     </scenes>
     <resources>

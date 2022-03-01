@@ -1,5 +1,6 @@
+
 //
-//  ViewController.swift
+//  ByGenViewController.swift
 //  PokeApp
 //
 //  Created by Aurelien Schaegis on 01/03/2022.
@@ -7,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate {
+class ByGenViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var pkmsTableView: UITableView!
     var pkmns: [String] = []
@@ -24,12 +25,10 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         self.pkmsTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-    
-
 
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension ByGenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pkmns.count
     }
