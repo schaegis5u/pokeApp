@@ -30,17 +30,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="PokeApp" id="A4a-lT-ekz">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="roa-cx-xWa">
-                                            <connections>
-                                                <segue destination="KcN-X8-85G" kind="show" id="Hia-ro-ICL"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="roa-cx-xWa"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.91980725526809692" green="0.14785233548563154" blue="0.18356664443146553" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UMK-6f-pgA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="7AZ-Et-J2E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UMK-6f-pgA" secondAttribute="bottom" id="Fuv-DN-dfF"/>
@@ -86,23 +82,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvU-4M-3pS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="729" y="-48"/>
-        </scene>
-        <!--Side Menu View Controller-->
-        <scene sceneID="mas-Qa-zy4">
-            <objects>
-                <viewController storyboardIdentifier="SideMenuID" id="KcN-X8-85G" customClass="SideMenuViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="B9a-nm-kn8">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="5fm-Q5-pgJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="AOM-s5-KAf"/>
-                    <size key="freeformSize" width="200" height="896"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="54w-Ey-9Nv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="612" y="-698"/>
         </scene>
     </scenes>
     <resources>

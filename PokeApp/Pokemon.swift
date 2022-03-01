@@ -13,7 +13,7 @@ class Pokemon {
     let id: String
     let sprite: String
 
-    init(name:String, id:String, sprite:String) {
+    init(name:String, id:String,  sprite:String) {
         self.name = name
         self.id = id
         self.sprite = sprite
@@ -21,7 +21,7 @@ class Pokemon {
     }
     
     func selfPresentation(){
-        print("[\(self.id)] Pokémon : \(self.name) | \(self.sprite) ")
+        print("[\(self.id)] Pokémon : \(self.name) ")
     }
     
 }

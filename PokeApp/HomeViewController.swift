@@ -22,11 +22,11 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         self.pkmsTableView.delegate = self
         self.pkmsTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
 
-
+    
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -36,18 +36,9 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "PokemonTableCell")
-        PokeApi.getPkmn(nom: pkmns[indexPath.row]).done{pokemon in
-            cell.textLabel?.text = "No°" + pokemon.id + " | " + pokemon.name.uppercased()
-            let imageUrl:URL = URL(string: pokemon.sprite)!
-            //DispatchQueue.global(qos: .userInitiated).async {
-                let imageData:NSData = NSData(contentsOf: imageUrl)!
-                    //DispatchQueue.main.async {
-                        cell.imageView?.image  = UIImage(data: imageData as Data)
-                    }
-            //}
-        //}
-        
-
+            PokeApi.getPkmn(nom: pkmns[indexPath.row]).done{pokemon in
+                cell.textLabel?.text = "No°" + pokemon.id + " | " + pokemon.name.uppercased()
+            }
     
         return cell
     }
@@ -55,3 +46,5 @@ extension HomeViewController: UITableViewDataSource {
     
     
 }
+
+

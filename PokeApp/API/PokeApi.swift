@@ -21,7 +21,6 @@ class PokeApi {
                     let tab = dataJson["results"].arrayValue
                     for poke in tab {
                         pkmns.append(poke["name"].stringValue)
-                        }
                     }
                     
                     
@@ -29,6 +28,7 @@ class PokeApi {
                     seal.fulfill(pkmns)
                 }
             }
+    }
     }
         
     
@@ -42,10 +42,11 @@ class PokeApi {
                     var sprite = dataJson["sprites"]["front_shiny"].stringValue
                     var id = dataJson["id"].stringValue
             
-                    seal.fulfill(Pokemon(name: nom, id:id, sprite: sprite))
+                    seal.fulfill(Pokemon(name: nom, id:id, sprite:sprite))
                 }
             }
         }
     }
+    
     
 }
