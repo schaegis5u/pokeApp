@@ -8,7 +8,7 @@ import PromiseKit
 
 class PokeApi {
     
-    static func getPkdx() -> Promise<[Pokemon]> {
+   /** static func getPkdx() -> Promise<[Pokemon]> {
         var pkmns: [Pokemon] = []
         
         return Promise { seal in
@@ -28,5 +28,5 @@ class PokeApi {
                 }
             }
         }
-    }
+    }*/
 }
