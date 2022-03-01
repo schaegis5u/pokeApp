@@ -5,6 +5,7 @@
 import Alamofire
 import SwiftyJSON
 import PromiseKit
+import Combine
 
 class PokeApi {
     
@@ -40,13 +41,13 @@ class PokeApi {
                 if let data = response.data{
                     let dataJson = JSON(data)
                     var sprite = dataJson["sprites"]["front_shiny"].stringValue
+                    var sprite_off = dataJson["sprites"]["other"]["official-artwork"]["front_default"].stringValue
                     var id = dataJson["id"].stringValue
             
-                    seal.fulfill(Pokemon(name: nom, id:id, sprite:sprite))
+                    seal.fulfill(Pokemon(name: nom, id:id, sprite:sprite, sprite_off: sprite_off))
                 }
             }
         }
     }
-    
-    
 }
+    
