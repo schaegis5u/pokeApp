@@ -19,17 +19,37 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             self.pkmsTableView.reloadData()
 
         }
+
         
-        self.pkmsTableView.delegate = self
-        self.pkmsTableView.dataSource = self
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Hello")
+        let pokemon = pkmns[indexPath.row]
+        self.performSegue(withIdentifier: "tableToDetails", sender: pokemon)
+   }
     
+    func prepare(for segue: UIStoryboardSegue, sender: String) {
+        if segue.identifier == "tableToDetails" {
+            
+            let pokemon = sender as String
+            
+            if let viewControllerDestination = segue.destination as? PokemonViewController {
+                viewControllerDestination.pkmn = pokemon
+            }
+            
+        }
+    }
     
+   
 }
 
+
+let navigationController = UINavigationController(rootViewController: HomeViewController())
+
 extension HomeViewController: UITableViewDataSource {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pkmns.count
     }
@@ -43,8 +63,10 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
     
+     
+    
+    
     
     
 }
-
 

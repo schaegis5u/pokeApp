@@ -28,7 +28,7 @@ class ByGenViewController: UIViewController {
     func random(){
         PokeApi.getPkdx().done{pkmns in
             self.pkmns = pkmns
-            PokeApi.getPkmn(nom: self.pkmns[(Int.random(in: 0...(pkmns.count)))]).done{pokemon in
+            PokeApi.getPkmn(nom: self.pkmns[(Int.random(in: 0...(pkmns.count-1)))]).done{pokemon in
                 self.text.text = pokemon.name.uppercased()
                 self.IdViewLabel.text = "No°" + pokemon.id
                 let imageUrl:URL = URL(string: pokemon.sprite_off)!
