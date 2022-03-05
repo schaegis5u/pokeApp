@@ -7,79 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D14FC763-8063-49B9-964D-AB34DCD8B05B"
+            uuid = "554969D8-3F77-42BF-A3C6-CA37CED2CD05"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokeApp/PokemonViewController.swift"
+            filePath = "PokeApp/ByGenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "SpritePokemon"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "D14FC763-8063-49B9-964D-AB34DCD8B05B - 6ae54f9e96c78c71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeApp.PokemonViewController.SpritePokemon.getter : Swift.Optional&lt;__C.UIImageView&gt;"
-                  moduleName = "PokeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/schaegis5u/Desktop/PokeApp/PokeApp/PokemonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "85">
-               </Location>
-               <Location
-                  uuid = "D14FC763-8063-49B9-964D-AB34DCD8B05B - 973efb315e41b87d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeApp.PokemonViewController.SpritePokemon.setter : Swift.Optional&lt;__C.UIImageView&gt;"
-                  moduleName = "PokeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/schaegis5u/Desktop/PokeApp/PokeApp/PokemonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "D14FC763-8063-49B9-964D-AB34DCD8B05B - 991b7614ffa264c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeApp.PokemonViewController.SpritePokemon.modify : Swift.Optional&lt;__C.UIImageView&gt;"
-                  moduleName = "PokeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/schaegis5u/Desktop/PokeApp/PokeApp/PokemonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "D14FC763-8063-49B9-964D-AB34DCD8B05B - fa07ee9fffc62686"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeApp.PokemonViewController.SpritePokemon.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "PokeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/schaegis5u/Desktop/PokeApp/PokeApp/PokemonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "randomizer(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

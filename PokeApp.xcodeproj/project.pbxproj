@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		082BE40027D345500074D678 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BE3FF27D345500074D678 /* PokemonViewController.swift */; };
+		082BE40227D35B850074D678 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BE40127D35B850074D678 /* PokemonViewController.swift */; };
 		087E3C4127CE12EF0065A09C /* PokeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087E3C4027CE12EF0065A09C /* PokeApi.swift */; };
 		087E3C4627CE202B0065A09C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087E3C4527CE202B0065A09C /* Pokemon.swift */; };
 		087E3C4827CE4BC30065A09C /* ByGenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087E3C4727CE4BC30065A09C /* ByGenViewController.swift */; };
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		01949DC51F656CECC7A042FF /* Pods_PokeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		082BE3FF27D345500074D678 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		082BE40127D35B850074D678 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		087E3C4027CE12EF0065A09C /* PokeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApi.swift; sourceTree = "<group>"; };
 		087E3C4527CE202B0065A09C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		087E3C4727CE4BC30065A09C /* ByGenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 				087E3C4527CE202B0065A09C /* Pokemon.swift */,
 				087E3C4727CE4BC30065A09C /* ByGenViewController.swift */,
 				087E3C4B27CE70820065A09C /* TabBarController.swift */,
-				082BE3FF27D345500074D678 /* PokemonViewController.swift */,
+				082BE40127D35B850074D678 /* PokemonViewController.swift */,
 			);
 			path = PokeApp;
 			sourceTree = "<group>";
@@ -435,7 +435,7 @@
 				088FFB4927CE0C3C00950624 /* HomeViewController.swift in Sources */,
 				087E3C4127CE12EF0065A09C /* PokeApi.swift in Sources */,
 				088FFB4527CE0C3C00950624 /* AppDelegate.swift in Sources */,
-				082BE40027D345500074D678 /* PokemonViewController.swift in Sources */,
+				082BE40227D35B850074D678 /* PokemonViewController.swift in Sources */,
 				088FFB4727CE0C3C00950624 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

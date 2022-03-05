@@ -49,5 +49,16 @@ class PokeApi {
             }
         }
     }
+    
+    static func getPkmnInfo(nom: String) -> Promise<JSON> {
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/pokemon/" + nom).response { response in
+                if let data = response.data{
+                    let dataJson = JSON(data)
+                    seal.fulfill(dataJson)
+            }
+        }
+    }
+    }
 }
     
