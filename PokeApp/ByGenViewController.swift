@@ -30,7 +30,6 @@ class ByGenViewController: UIViewController {
             self.pkmns = pkmns
             PokeApi.getPkmn(nom: self.pkmns[(Int.random(in: 0...(pkmns.count-1)))]).done{pokemon in
                 self.poke = pokemon.name
-                print("marche enculé " + self.poke)
                 self.text.text = pokemon.name.uppercased()
                 self.IdViewLabel.text = "No°" + pokemon.id
                 let imageUrl:URL = URL(string: pokemon.sprite_off)!
@@ -43,7 +42,6 @@ class ByGenViewController: UIViewController {
     }
     
     @IBAction func toPokedex(_ sender: Any) {
-        print("marche enculé " + self.poke)
         self.performSegue(withIdentifier: "randomToDetails", sender: Any?.self)
         
     }

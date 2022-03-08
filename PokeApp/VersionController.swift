@@ -13,6 +13,7 @@ class VersionController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableVersion: UITableView!
     
     var versions: [String] = []
+    var region: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,9 @@ class VersionController: UIViewController, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let version = versions[indexPath.row]
-        //self.performSegue(withIdentifier: "tableToVersion", sender: version)
+        region = indexPath.row+1
+ 
+        self.performSegue(withIdentifier: "regionToDetails", sender: indexPath.row+1)
    }
     
 }
@@ -52,21 +54,19 @@ class VersionController: UIViewController, UITableViewDelegate {
            return cell
            
         }
-        /*
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-            
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "VersionTableCell")
-            PokeApi.getVersionName(version: indexPath.row).done{version in
-                cell.textLabel?.text = version.uppercased()
+        
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "regionToDetails" {
+                
+                let region = sender as? String
+                
+                if let viewControllerDestination = segue.destination as? RegionViewController {
+                    viewControllerDestination.region = self.region
+                }
                 
             }
-            return cell
-            
         }
-         */
-        
-        
     }
 
 

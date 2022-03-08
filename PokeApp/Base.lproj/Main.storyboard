@@ -483,11 +483,38 @@
                     <tabBarItem key="tabBarItem" title="Versions" image="book.closed.fill" catalog="system" id="elA-W2-GV3"/>
                     <connections>
                         <outlet property="tableVersion" destination="H7W-qe-WzI" id="PJj-OM-OJE"/>
+                        <segue destination="Oel-1M-uHQ" kind="show" identifier="regionToDetails" id="GH7-f3-VTG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIh-Jd-N2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1497.1014492753625" y="724.55357142857144"/>
+        </scene>
+        <!--Region View Controller-->
+        <scene sceneID="QCR-BA-G9L">
+            <objects>
+                <viewController id="Oel-1M-uHQ" customClass="RegionViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Cr-32-sea">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-37-sXI">
+                                <rect key="frame" x="20" y="31" width="368" height="766"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h7G-Ea-ewv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jVz-QW-g6w"/>
+                    <connections>
+                        <outlet property="tableView" destination="M6X-37-sXI" id="C0o-YH-azC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cd-Xj-uAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1497.1014492753625" y="1503.3482142857142"/>
         </scene>
         <!--Randomizer-->
         <scene sceneID="Xcj-Lf-K8S">
