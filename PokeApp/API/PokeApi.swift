@@ -23,9 +23,6 @@ class PokeApi {
                     for poke in tab {
                         pkmns.append(poke["name"].stringValue)
                     }
-                    
-                    
-                
                     seal.fulfill(pkmns)
                 }
             }
@@ -60,5 +57,55 @@ class PokeApi {
         }
     }
     }
-}
     
+    static func getPokemonByVersion(version: String) -> Promise<[String]> {
+        var pkmn: [String] = []
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/generation/"+version).response { response in
+                if let data = response.data{
+                    let datajson = JSON(data)
+                    for i in 0...datajson["pokemon_species"].count{
+                        pkmn.append(datajson["pokemon_species"][i]["name"].stringValue)
+                    }
+                    seal.fulfill(pkmn)
+                }
+            }
+        }
+    }
+    
+    
+    
+    static func getVersion() -> Promise<[String]> {
+        var versions: [String] = []
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/generation").response { response in
+                if let data = response.data{
+                    let datajson = JSON(data)
+                    
+                    let tab = datajson["results"].arrayValue
+                    for version in tab {
+                        versions.append(version["name"].stringValue)
+                    }
+                }
+                seal.fulfill(versions)
+
+            }
+        }
+    }
+    
+    static func getVersionName(version: Int) -> Promise<String> {
+        var versionname : String = ""
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/generation/"+String(version)).response { response in
+                if let data = response.data{
+                    let datajson = JSON(data)
+                    
+                    versionname = datajson["main_region"]["name"].stringValue
+                    }
+                    seal.fulfill(versionname)
+                }
+            }
+        }
+
+}
+

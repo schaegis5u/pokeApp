@@ -23,6 +23,12 @@ class PokemonViewController:UIViewController {
     @IBOutlet weak var sprite: UIImageView!
     @IBOutlet weak var type1: UIImageView!
     @IBOutlet weak var type2: UIImageView!
+    @IBOutlet weak var hpLab: UILabel!
+    @IBOutlet weak var atkLab: UILabel!
+    @IBOutlet weak var defLab: UILabel!
+    @IBOutlet weak var spdLab: UILabel!
+    @IBOutlet weak var spdefLab: UILabel!
+    @IBOutlet weak var spatkLab: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +49,14 @@ class PokemonViewController:UIViewController {
                 self.spatkBar.progress = ((data["stats"][3]["base_stat"].floatValue) / 255)
                 self.spdefBar.progress = ((data["stats"][4]["base_stat"].floatValue) / 255)
                 self.spdBar.progress = ((data["stats"][5]["base_stat"].floatValue) / 255)
+                
+                self.hpLab.text = (data["stats"][0]["base_stat"].stringValue)
+                self.atkLab.text = (data["stats"][1]["base_stat"].stringValue)
+                self.defLab.text = (data["stats"][2]["base_stat"].stringValue)
+                self.spatkLab.text = (data["stats"][3]["base_stat"].stringValue)
+                self.spdefLab.text = (data["stats"][4]["base_stat"].stringValue)
+                self.spdLab.text = (data["stats"][5]["base_stat"].stringValue)
+                
                 let image2Url:URL = URL(string: data["sprites"]["front_default"].stringValue)!
                 DispatchQueue.global(qos: .userInitiated).async {
                     let imageData2:NSData = NSData(contentsOf: image2Url)!
@@ -59,6 +73,7 @@ class PokemonViewController:UIViewController {
                 }
             
                 self.type1.image = UIImage(named:data["types"][0]["type"]["name"].stringValue)
+                print(data["types"][0]["type"]["name"].stringValue)
                 if (data["types"][1]["type"]["name"]).exists(){
                     self.type2.image = UIImage(named: data["types"][1]["type"]["name"].stringValue)
                 }

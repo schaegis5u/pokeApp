@@ -9,22 +9,27 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pkmsTableView: UITableView!
     var pkmns: [String] = []
+    var pokemonTest: [String] = []
+    var pkmnsfiltered: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         PokeApi.getPkdx().done{pkmns in
             self.pkmns = pkmns
+            self.pkmnsfiltered = pkmns
             self.pkmsTableView.reloadData()
-
         }
-
-        
+        PokeApi.getPokemonByVersion(version: "4").done{poke in
+            self.pokemonTest = poke
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pokemon = pkmns[indexPath.row]
+        let pokemon = pkmnsfiltered[indexPath.row]
         self.performSegue(withIdentifier: "tableToDetails", sender: pokemon)
    }
     
@@ -40,29 +45,37 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    
+    
    
 }
 
 
 let navigationController = UINavigationController(rootViewController: HomeViewController())
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource,UISearchBarDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pkmns.count
+        return pkmnsfiltered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "PokemonTableCell")
-            PokeApi.getPkmn(nom: pkmns[indexPath.row]).done{pokemon in
+            PokeApi.getPkmn(nom: pkmnsfiltered[indexPath.row]).done{pokemon in
                 cell.textLabel?.text = "No°" + pokemon.id + " | " + pokemon.name.uppercased()
             }
     
         return cell
     }
     
-     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        pkmnsfiltered = searchText.isEmpty ? pkmns : pkmns.filter { (item: String) -> Bool in
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        self.pkmsTableView.reloadData()
+    }
     
     
     
