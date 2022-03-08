@@ -26,38 +26,36 @@ class ByGenViewController: UIViewController {
     
     // La fonction est liée au 2 boutons, c'est la merde, corriger
     @IBAction func randomizer(_ sender: Any) {
-        boutonFiche.isHidden = false
         PokeApi.getPkdx().done{pkmns in
             self.pkmns = pkmns
             PokeApi.getPkmn(nom: self.pkmns[(Int.random(in: 0...(pkmns.count-1)))]).done{pokemon in
                 self.poke = pokemon.name
+                print("marche enculé " + self.poke)
                 self.text.text = pokemon.name.uppercased()
                 self.IdViewLabel.text = "No°" + pokemon.id
                 let imageUrl:URL = URL(string: pokemon.sprite_off)!
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let imageData:NSData = NSData(contentsOf: imageUrl)!
-                        DispatchQueue.main.async {
-                            self.imageView.image = UIImage(data: imageData as Data)
-                        }
-                }
+                let imageData:NSData = NSData(contentsOf: imageUrl)!
+                self.imageView.image = UIImage(data: imageData as Data)
+                self.boutonFiche.isHidden = false
                 
             }
         }
     }
     
     @IBAction func toPokedex(_ sender: Any) {
-        self.performSegue(withIdentifier: "randomToDetails", sender: poke)
+        print("marche enculé " + self.poke)
+        self.performSegue(withIdentifier: "randomToDetails", sender: Any?.self)
         
     }
                           
-    func prepare(for segue: UIStoryboardSegue, sender: String?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "randomToDetails" {
-            let pokemon = sender as? String
+                if let viewControllerDestination = segue.destination as? PokemonViewController {
+                    viewControllerDestination.pkmn = self.poke
 
-            if let viewControllerDestination = segue.destination as? PokemonViewController {
-                viewControllerDestination.pkmn = pokemon!
-            }
+                }
             
+        
         }
         }
 }

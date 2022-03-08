@@ -10,7 +10,7 @@ import UIKit
 
 class PokemonViewController:UIViewController {
     
-    var pkmn: String? = nil
+    var pkmn: String?
     @IBOutlet weak var nomPoke: UILabel!
     @IBOutlet weak var imagePoke: UIImageView!
     @IBOutlet weak var hpBar: UIProgressView!
