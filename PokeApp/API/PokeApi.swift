@@ -26,7 +26,7 @@ class PokeApi {
                     seal.fulfill(pkmns)
                 }
             }
-    }
+        }
     }
         
     
@@ -213,5 +213,52 @@ class PokeApi {
         }
     }
 
+    static func getRandomPkmn() -> Promise<String> {
+        var pkmns: [String] = []
+        
+        return Promise { seal in
+            //1126
+            AF.request("https://pokeapi.co/api/v2/pokemon?limit=1200").response { response in
+                
+                if let data = response.data{
+                    let dataJson = JSON(data)
+                    //let tabpkmns = dataJson.arrayValue
+                    let tab = dataJson["results"].arrayValue
+                    for poke in tab {
+                        pkmns.append(poke["name"].stringValue)
+                    }
+                    
+                    seal.fulfill(pkmns[Int.random(in: 1..<pkmns.count)])
+                }
+            }
+        }
+    }
+    
+    static func getRandomPkmns(nb: Int) -> Promise<[String]> {
+        var pkmns: [String] = []
+        var pkmnsreturned: [String] = []
+        
+        return Promise { seal in
+            //1126
+            AF.request("https://pokeapi.co/api/v2/pokemon?limit=1200").response { response in
+                
+                if let data = response.data{
+                    let dataJson = JSON(data)
+                    //let tabpkmns = dataJson.arrayValue
+                    let tab = dataJson["results"].arrayValue
+                    for poke in tab {
+                        pkmns.append(poke["name"].stringValue)
+                    }
+                    
+                    for _ in 0...nb{
+                        pkmnsreturned.append(pkmns[Int.random(in: 1..<pkmns.count)])
+                    }
+                    
+                    seal.fulfill(pkmnsreturned)
+                }
+            }
+        }
+    }
+    
 }
 

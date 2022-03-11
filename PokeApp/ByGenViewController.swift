@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreImage.CIFilterBuiltins
 
 class ByGenViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class ByGenViewController: UIViewController {
         super.viewDidLoad()
         boutonFiche.isHidden = true
     }
+
     
     @IBAction func randomizer(_ sender: Any) {
         PokeApi.getPkdx().done{pkmns in
@@ -60,6 +62,9 @@ class ByGenViewController: UIViewController {
             
         
         }
-        }
+    }
+    
+    
 }
+
 
