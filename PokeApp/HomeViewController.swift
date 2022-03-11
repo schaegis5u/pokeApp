@@ -23,9 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             self.pkmnsfiltered = pkmns
             self.pkmsTableView.reloadData()
         }
-        PokeApi.getPokemonByVersion(version: "4").done{poke in
-            self.pokemonTest = poke
-        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

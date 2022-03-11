@@ -14,7 +14,7 @@ class PokeApi {
         
         return Promise { seal in
             //1126
-            AF.request("https://pokeapi.co/api/v2/pokemon?limit=898").response { response in
+            AF.request("https://pokeapi.co/api/v2/pokemon?limit=1200").response { response in
                 
                 if let data = response.data{
                     let dataJson = JSON(data)
@@ -37,11 +37,29 @@ class PokeApi {
                 
                 if let data = response.data{
                     let dataJson = JSON(data)
-                    var sprite = dataJson["sprites"]["front_shiny"].stringValue
-                    var sprite_off = dataJson["sprites"]["other"]["official-artwork"]["front_default"].stringValue
-                    var id = dataJson["id"].stringValue
+                    let sprite = dataJson["sprites"]["front_shiny"].stringValue
+                    let sprite_off = dataJson["sprites"]["other"]["official-artwork"]["front_default"].stringValue
+                    let id = dataJson["id"].stringValue
             
                     seal.fulfill(Pokemon(name: nom, id:id, sprite:sprite, sprite_off: sprite_off))
+                }
+            }
+        }
+    }
+    
+    static func getPkmnVersion(nom: String) -> Promise<Pokemon> {
+        return Promise { seal in
+            
+            AF.request("https://pokeapi.co/api/v2/pokemon-species/" + nom).response { response in
+                
+                if let data = response.data{
+                    let dataJson = JSON(data)
+                    let sprite = ""
+                    let sprite_off = ""
+                    let id = dataJson["id"].stringValue
+                    let name = dataJson["varieties"][0]["pokemon"]["name"].stringValue
+            
+                    seal.fulfill(Pokemon(name: name, id:id, sprite:sprite, sprite_off: sprite_off))
                 }
             }
         }
@@ -57,8 +75,8 @@ class PokeApi {
         }
     }
     }
-    
-    static func getPokemonByVersion(version: String) -> Promise<[String]> {
+    //Version pas chiante
+    /*static func getPokemonByVersion(version: String) -> Promise<[String]> {
         var pkmn: [String] = []
         return Promise { seal in
             AF.request("https://pokeapi.co/api/v2/generation/"+version).response { response in
@@ -66,6 +84,62 @@ class PokeApi {
                     let datajson = JSON(data)
                     for i in 0...datajson["pokemon_species"].count{
                         pkmn.append(datajson["pokemon_species"][i]["name"].stringValue)
+                    }
+                    seal.fulfill(pkmn)
+                }
+            }
+        }
+    }*/
+    
+    
+    static func getPokemonByVersion(version: String) -> Promise<[String]> {
+        var pkmn: [String] = []
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/generation/"+version).response { response in
+                if let data = response.data{
+                    let datajson = JSON(data)
+                    var min = 0
+                    var nb = 0
+                    switch version {
+                    case "1":
+                        min = 1
+                        nb = datajson["pokemon_species"].count
+                    case "2":
+                        //1e entree du pokedex de la gen
+                        min = 152
+                        //nb de poke dans la gen
+                        nb = datajson["pokemon_species"].count
+                    case "3":
+                        min = 252
+                        nb = datajson["pokemon_species"].count
+                    case "4":
+                        min = 387
+                        nb = datajson["pokemon_species"].count
+                    case "5":
+                        min = 494
+                        nb = datajson["pokemon_species"].count
+                    case "6":
+                        min = 650
+                        nb = datajson["pokemon_species"].count
+                    case "7":
+                        min = 722
+                        nb = datajson["pokemon_species"].count
+                    case "8":
+                        min = 810
+                        nb = datajson["pokemon_species"].count
+                    default:
+                        break
+                    }
+                    
+                    while pkmn.count != nb {
+                        for i in 0...datajson["pokemon_species"].count{
+                            var num = (datajson["pokemon_species"][i]["url"].stringValue).split(separator: "/")
+                            if let id = num.popLast() {
+                                if (Int(id)) == (pkmn.count+min){
+                                    pkmn.append(datajson["pokemon_species"][i]["name"].stringValue)
+                                }
+                            }
+                        }
                     }
                     seal.fulfill(pkmn)
                 }

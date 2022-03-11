@@ -59,8 +59,6 @@ class VersionController: UIViewController, UITableViewDelegate {
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "regionToDetails" {
                 
-                let region = sender as? String
-                
                 if let viewControllerDestination = segue.destination as? RegionViewController {
                     viewControllerDestination.region = self.region
                 }

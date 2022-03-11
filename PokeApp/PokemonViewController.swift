@@ -35,14 +35,15 @@ class PokemonViewController:UIViewController {
         if let pkmn = pkmn {
             self.nomPoke.text = pkmn.uppercased()
             PokeApi.getPkmnInfo(nom: pkmn).done{data in
-                let imageUrl:URL = URL(string: data["sprites"]["other"]["official-artwork"]["front_default"].stringValue)!
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let imageData:NSData = NSData(contentsOf: imageUrl)!
-                        DispatchQueue.main.async {
-                            self.imagePoke.image = UIImage(data: imageData as Data)
-                        }
+                if data["sprites"]["other"]["official-artwork"]["front_default"].stringValue != "" {
+                    let imageUrl:URL = URL(string: data["sprites"]["other"]["official-artwork"]["front_default"].stringValue)!
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData:NSData = NSData(contentsOf: imageUrl)!
+                            DispatchQueue.main.async {
+                                self.imagePoke.image = UIImage(data: imageData as Data)
+                            }
+                    }
                 }
-                print(data["stats"][0]["base_stat"].stringValue)
                 self.hpBar.progress = ((data["stats"][0]["base_stat"].floatValue) / 255)
                 self.atkBar.progress = ((data["stats"][1]["base_stat"].floatValue) / 255)
                 self.defBar.progress = ((data["stats"][2]["base_stat"].floatValue) / 255)
@@ -57,23 +58,27 @@ class PokemonViewController:UIViewController {
                 self.spdefLab.text = (data["stats"][4]["base_stat"].stringValue)
                 self.spdLab.text = (data["stats"][5]["base_stat"].stringValue)
                 
-                let image2Url:URL = URL(string: data["sprites"]["front_default"].stringValue)!
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let imageData2:NSData = NSData(contentsOf: image2Url)!
-                        DispatchQueue.main.async {
-                            self.sprite.image = UIImage(data: imageData2 as Data)
-                        }
+                if data["sprites"]["front_default"].stringValue != "" {
+                    let image2Url:URL = URL(string: data["sprites"]["front_default"].stringValue)!
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData2:NSData = NSData(contentsOf: image2Url)!
+                            DispatchQueue.main.async {
+                                self.sprite.image = UIImage(data: imageData2 as Data)
+                            }
+                    }
                 }
-                let image3Url:URL = URL(string: data["sprites"]["front_shiny"].stringValue)!
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let imageData3:NSData = NSData(contentsOf: image3Url)!
-                        DispatchQueue.main.async {
-                            self.sprite_shiny.image = UIImage(data: imageData3 as Data)
-                        }
+                if data["sprites"]["front_shiny"].stringValue != "" {
+                    let image3Url:URL = URL(string: data["sprites"]["front_shiny"].stringValue)!
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        let imageData3:NSData = NSData(contentsOf: image3Url)!
+                            DispatchQueue.main.async {
+                                self.sprite_shiny.image = UIImage(data: imageData3 as Data)
+                            }
+                    }
                 }
+                
             
                 self.type1.image = UIImage(named:data["types"][0]["type"]["name"].stringValue)
-                print(data["types"][0]["type"]["name"].stringValue)
                 if (data["types"][1]["type"]["name"]).exists(){
                     self.type2.image = UIImage(named: data["types"][1]["type"]["name"].stringValue)
                 }
