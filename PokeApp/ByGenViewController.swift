@@ -24,7 +24,6 @@ class ByGenViewController: UIViewController {
         boutonFiche.isHidden = true
     }
     
-    // La fonction est liée au 2 boutons, c'est la merde, corriger
     @IBAction func randomizer(_ sender: Any) {
         PokeApi.getPkdx().done{pkmns in
             self.pkmns = pkmns
@@ -32,9 +31,15 @@ class ByGenViewController: UIViewController {
                 self.poke = pokemon.name
                 self.text.text = pokemon.name.uppercased()
                 self.IdViewLabel.text = "No°" + pokemon.id
-                let imageUrl:URL = URL(string: pokemon.sprite_off)!
-                let imageData:NSData = NSData(contentsOf: imageUrl)!
-                self.imageView.image = UIImage(data: imageData as Data)
+                if pokemon.sprite_off != "" {
+                    let imageUrl:URL = URL(string: pokemon.sprite_off)!
+                    let imageData:NSData = NSData(contentsOf: imageUrl)!
+                    self.imageView.image = UIImage(data: imageData as Data)
+                }
+                else {
+                    self.imageView.image = UIImage(named: "placeholder")
+                }
+
                 self.boutonFiche.isHidden = false
                 
             }

@@ -180,6 +180,38 @@ class PokeApi {
                 }
             }
         }
+    
+    static func getArea() -> Promise<[String]> {
+        var zones: [String] = []
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/location-area?limit=750").response { response in
+                if let data = response.data{
+                    let datajson = JSON(data)
+                    let tab = datajson["results"].arrayValue
+                    for zone in tab {
+                        zones.append(zone["name"].stringValue)
+                    }
+                }
+                seal.fulfill(zones)
+            }
+        }
+    }
+    
+    static func getAreaPokemon(nom: String) -> Promise<[String]> {
+        var pokemons: [String] = []
+        return Promise { seal in
+            AF.request("https://pokeapi.co/api/v2/location-area/"+nom).response { response in
+                if let data = response.data{
+                    let datajson = JSON(data)
+                    let tab = datajson["pokemon_encounters"].arrayValue
+                    for poke in tab {
+                        pokemons.append(poke["pokemon"]["name"].stringValue)
+                    }
+                }
+                seal.fulfill(pokemons)
+            }
+        }
+    }
 
 }
 

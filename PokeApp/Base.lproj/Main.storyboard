@@ -8,6 +8,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Zones-->
+        <scene sceneID="05O-OT-C8d">
+            <objects>
+                <viewController id="Yvz-vW-STM" customClass="ZoneViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QKj-nu-Cdh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EaN-aY-8Dv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yvz-vW-STM" id="x8c-Rj-drO"/>
+                                    <outlet property="delegate" destination="Yvz-vW-STM" id="82a-01-d9k"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Doj-ih-AtW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EaN-aY-8Dv" firstAttribute="leading" secondItem="Doj-ih-AtW" secondAttribute="leading" id="XkD-QN-hiz"/>
+                            <constraint firstItem="Doj-ih-AtW" firstAttribute="bottom" secondItem="EaN-aY-8Dv" secondAttribute="bottom" id="abO-AJ-JBx"/>
+                            <constraint firstItem="EaN-aY-8Dv" firstAttribute="top" secondItem="Doj-ih-AtW" secondAttribute="top" id="dEw-l0-jfb"/>
+                            <constraint firstItem="Doj-ih-AtW" firstAttribute="trailing" secondItem="EaN-aY-8Dv" secondAttribute="trailing" id="fjM-tk-jk6"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Zones" image="map" catalog="system" id="bh1-Nc-dK4"/>
+                    <connections>
+                        <outlet property="tableViewArea" destination="EaN-aY-8Dv" id="56g-zQ-QFq"/>
+                        <segue destination="1tm-3Z-7cg" kind="show" identifier="areaToPokemon" id="Sa6-nj-uXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTS-fr-rbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2204" y="725"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yWL-G0-wzY">
             <objects>
@@ -21,6 +57,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kEx-mb-Pm6"/>
                         <segue destination="rTD-rk-dYt" kind="relationship" relationship="viewControllers" id="0bt-Dx-sdL"/>
                         <segue destination="XDw-1Y-Zir" kind="relationship" relationship="viewControllers" id="MPt-mv-I11"/>
+                        <segue destination="Yvz-vW-STM" kind="relationship" relationship="viewControllers" id="bXq-z5-akc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DjX-2p-hxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -495,6 +532,42 @@
             </objects>
             <point key="canvasLocation" x="-1497.1014492753625" y="724.55357142857144"/>
         </scene>
+        <!--Area Pokemon View Controller-->
+        <scene sceneID="IF0-nY-HdP">
+            <objects>
+                <viewController id="1tm-3Z-7cg" customClass="AreaPokemonViewController" customModule="PokeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hUQ-2e-JId">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hm1-dv-Tnc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1tm-3Z-7cg" id="dob-IG-plX"/>
+                                    <outlet property="delegate" destination="1tm-3Z-7cg" id="60E-Wh-3EI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FhF-ge-3D1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FhF-ge-3D1" firstAttribute="bottom" secondItem="hm1-dv-Tnc" secondAttribute="bottom" id="RvR-fC-7ve"/>
+                            <constraint firstItem="hm1-dv-Tnc" firstAttribute="leading" secondItem="FhF-ge-3D1" secondAttribute="leading" id="XHJ-tS-rX5"/>
+                            <constraint firstItem="hm1-dv-Tnc" firstAttribute="top" secondItem="FhF-ge-3D1" secondAttribute="top" id="nkB-F4-4yV"/>
+                            <constraint firstItem="FhF-ge-3D1" firstAttribute="trailing" secondItem="hm1-dv-Tnc" secondAttribute="trailing" id="tGJ-sJ-NKk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XgA-iS-0pi"/>
+                    <connections>
+                        <outlet property="tableViewPoke" destination="hm1-dv-Tnc" id="oJQ-ZO-w6y"/>
+                        <segue destination="mcc-sd-5OY" kind="show" identifier="PokeAreaToDetails" id="Rc3-ra-vDc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oP5-SO-VJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2204" y="1401"/>
+        </scene>
         <!--Region View Controller-->
         <scene sceneID="QCR-BA-G9L">
             <objects>
@@ -589,16 +662,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Pokémon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZU-gi-LTH">
-                                <rect key="frame" x="16" y="76" width="382" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Pokémon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZU-gi-LTH">
+                                <rect key="frame" x="16" y="76" width="382" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9R2-j0-DfF">
-                                <rect key="frame" x="12" y="159" width="390" height="546"/>
+                                <rect key="frame" x="12" y="158.5" width="390" height="546.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJt-91-jMU">
-                                <rect key="frame" x="160" y="123" width="94" height="26"/>
+                                <rect key="frame" x="0.0" y="122.5" width="414" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -632,16 +705,16 @@
                         <constraints>
                             <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" secondItem="9R2-j0-DfF" secondAttribute="trailing" constant="12" id="20G-Ay-6iK"/>
                             <constraint firstItem="DZU-gi-LTH" firstAttribute="top" secondItem="aaS-v7-3rT" secondAttribute="top" constant="32" id="35u-PX-yTu"/>
-                            <constraint firstItem="jJt-91-jMU" firstAttribute="leading" secondItem="aaS-v7-3rT" secondAttribute="leading" constant="160" id="3hM-Zt-DXz"/>
+                            <constraint firstItem="jJt-91-jMU" firstAttribute="leading" secondItem="aaS-v7-3rT" secondAttribute="leading" id="3hM-Zt-DXz"/>
                             <constraint firstItem="6yo-eC-Kfn" firstAttribute="centerX" secondItem="PFf-mD-ha4" secondAttribute="centerX" id="B5h-60-B2w"/>
                             <constraint firstItem="9R2-j0-DfF" firstAttribute="top" secondItem="jJt-91-jMU" secondAttribute="bottom" constant="10" id="BZ1-ac-GAc"/>
-                            <constraint firstItem="PFf-mD-ha4" firstAttribute="trailing" secondItem="DZU-gi-LTH" secondAttribute="trailing" id="EE6-hz-OOw"/>
+                            <constraint firstItem="PFf-mD-ha4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DZU-gi-LTH" secondAttribute="trailing" id="EE6-hz-OOw"/>
                             <constraint firstItem="PFf-mD-ha4" firstAttribute="top" secondItem="9R2-j0-DfF" secondAttribute="bottom" constant="26" id="GTM-WQ-Qo7"/>
                             <constraint firstItem="aaS-v7-3rT" firstAttribute="bottom" secondItem="6yo-eC-Kfn" secondAttribute="bottom" id="Ivp-Mv-pd9"/>
-                            <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" secondItem="jJt-91-jMU" secondAttribute="trailing" constant="160" id="OZG-Ky-Tj7"/>
+                            <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" secondItem="jJt-91-jMU" secondAttribute="trailing" id="OZG-Ky-Tj7"/>
                             <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" secondItem="DZU-gi-LTH" secondAttribute="trailing" constant="16" id="R9P-rC-8AD"/>
-                            <constraint firstItem="PFf-mD-ha4" firstAttribute="leading" secondItem="aaS-v7-3rT" secondAttribute="leading" constant="16" id="VRQ-pu-Cmb"/>
-                            <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" secondItem="PFf-mD-ha4" secondAttribute="trailing" constant="16" id="YAZ-do-Ai1"/>
+                            <constraint firstItem="PFf-mD-ha4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aaS-v7-3rT" secondAttribute="leading" id="VRQ-pu-Cmb"/>
+                            <constraint firstItem="aaS-v7-3rT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PFf-mD-ha4" secondAttribute="trailing" id="YAZ-do-Ai1"/>
                             <constraint firstItem="PFf-mD-ha4" firstAttribute="leading" secondItem="DZU-gi-LTH" secondAttribute="leading" id="axH-GN-nqz"/>
                             <constraint firstItem="6yo-eC-Kfn" firstAttribute="top" secondItem="PFf-mD-ha4" secondAttribute="bottom" constant="2" id="cPK-s9-F5l"/>
                             <constraint firstItem="9R2-j0-DfF" firstAttribute="top" secondItem="DZU-gi-LTH" secondAttribute="bottom" constant="44" id="f91-Jg-wTh"/>
@@ -672,11 +745,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zkP-nX-a3L"/>
+        <segue reference="p0m-Dn-0JQ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="list.bullet.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <image name="questionmark" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

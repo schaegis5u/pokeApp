@@ -24,6 +24,8 @@
 		08A3337327D76F8900076507 /* VersionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3337227D76F8900076507 /* VersionController.swift */; };
 		08A3337A27D7A6E100076507 /* VersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3337827D7A6E100076507 /* VersionTableViewCell.swift */; };
 		08A3337D27D7B9AB00076507 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3337C27D7B9AB00076507 /* RegionViewController.swift */; };
+		08A6C07427DB819400C31D8C /* ZoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C07327DB819400C31D8C /* ZoneViewController.swift */; };
+		08A6C07627DB832E00C31D8C /* AreaPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C07527DB832E00C31D8C /* AreaPokemonViewController.swift */; };
 		5115BDA52EDA67F562FBC84B /* Pods_PokeApp_PokeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DF7FCEA64A5788EEA4F075 /* Pods_PokeApp_PokeAppUITests.framework */; };
 		8A9136C0E2ADAB4DD4B36299 /* Pods_PokeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01949DC51F656CECC7A042FF /* Pods_PokeAppTests.framework */; };
 		9C8C85C2CFF882A32E6A32DB /* Pods_PokeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFDAE403E2F91F0D98DCB18 /* Pods_PokeApp.framework */; };
@@ -69,6 +71,8 @@
 		08A3337227D76F8900076507 /* VersionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionController.swift; sourceTree = "<group>"; };
 		08A3337827D7A6E100076507 /* VersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTableViewCell.swift; sourceTree = "<group>"; };
 		08A3337C27D7B9AB00076507 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
+		08A6C07327DB819400C31D8C /* ZoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewController.swift; sourceTree = "<group>"; };
+		08A6C07527DB832E00C31D8C /* AreaPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPokemonViewController.swift; sourceTree = "<group>"; };
 		2AAA4167F1301A171849C659 /* Pods-PokeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PokeAppTests/Pods-PokeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		388BDEE2460FBD9C5FBD636F /* Pods-PokeApp-PokeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeApp-PokeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-PokeApp-PokeAppUITests/Pods-PokeApp-PokeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		468CDA38950BB6381EC57026 /* Pods-PokeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeApp.release.xcconfig"; path = "Target Support Files/Pods-PokeApp/Pods-PokeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				08A3337227D76F8900076507 /* VersionController.swift */,
 				08A3337827D7A6E100076507 /* VersionTableViewCell.swift */,
 				08A3337C27D7B9AB00076507 /* RegionViewController.swift */,
+				08A6C07327DB819400C31D8C /* ZoneViewController.swift */,
+				08A6C07527DB832E00C31D8C /* AreaPokemonViewController.swift */,
 			);
 			path = PokeApp;
 			sourceTree = "<group>";
@@ -448,6 +454,8 @@
 				088FFB4527CE0C3C00950624 /* AppDelegate.swift in Sources */,
 				082BE40227D35B850074D678 /* PokemonViewController.swift in Sources */,
 				088FFB4727CE0C3C00950624 /* SceneDelegate.swift in Sources */,
+				08A6C07427DB819400C31D8C /* ZoneViewController.swift in Sources */,
+				08A6C07627DB832E00C31D8C /* AreaPokemonViewController.swift in Sources */,
 				08A3337D27D7B9AB00076507 /* RegionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
