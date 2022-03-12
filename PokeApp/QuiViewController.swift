@@ -128,15 +128,15 @@ class QuiViewController: UIViewController {
             self.Pokemon4.setTitle(self.Pokemons[3].uppercased(), for: .normal)
             
             
-            PokeApi.getPkmn(nom: self.Pokemons[Int.random(in: 0..<3)]).done{poke in
+            PokeApi.getPkmn(nom: self.Pokemons[Int.random(in: 0..<4)]).done{poke in
                 self.selectedPokemon = poke
                 if self.selectedPokemon!.sprite_off != ""{
                     let imageUrl:URL = URL(string: self.selectedPokemon!.sprite_off)!
                     let imageData:NSData = NSData(contentsOf: imageUrl)!
                     self.ImagePokemon.image = UIImage(data: imageData as Data)
-                    
-                    
-
+                }
+                else {
+                    self.loadGame()
                 }
                 
             }
